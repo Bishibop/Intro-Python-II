@@ -7,4 +7,15 @@ class Item:
         return f'{self.name}'
 
     def on_take(self):
-        print(f'You have picked up the {self.name}')
+        print(f'You picked up the {self.name}')
+
+    def on_drop(self):
+        print(f'You dropped a {self.name}')
+
+
+class LightSource(Item):
+    def __init__(self, name, description):
+        super().__init__(name, description)
+
+    def on_drop(self):
+        print('You dropped your lightsource. That was stupid.')
